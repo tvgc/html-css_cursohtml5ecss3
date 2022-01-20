@@ -1,0 +1,215 @@
+@charset "UTF-08";
+
+/*@font-face {
+    font-family: "titulo do header";
+    src: url('../fontes/BebasNeue-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+} no meu site eu utilizei font face tbm para a fonte Bebas, mas guanabara importou direto do google fonts*/
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@font-face { /*fonte para ser usado para títulos*/
+    font-family: 'fonte padrão';
+    src: url('../fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --color01: #84E1AD; /*body*/
+    --color02: #1A5C38; /*tonalidade mais escura para o cabeçalho*/
+    --color03: #3CD782; /*tonalidade mais clara para o cabeçalho*/
+    --color04: #C5EBD6; /*aside*/
+    --color05: #2FA866; /*background-color do h4 do aside*/
+    --default-padding: 20px; /*padding padrão utilizado*/
+    --aside-border: 15px;
+    --p-padrao: 18px;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: 'Bebas Neue', cursive;
+    --fonte-android: 'Android', cursive;
+}
+
+* {
+    padding: 0px;
+    margin: opx;
+}
+
+
+/* --- Abaixo está agrupado a parte de <responsividade> --- */
+
+/*@media (max-width:850px) {
+    img {
+        width: 600px;
+    }
+}*/
+
+body { 
+    background-color: var(--color01);
+    font-family: var(--fonte-padrao);
+    color: black;
+    margin: 0px;
+    width: 100%;
+}
+
+/* --- Abaixo está agrupado a maior parte dos estilos para o <header> --- */
+
+header {
+    background: linear-gradient(var(--color03), var(--color02));
+    color: white;
+    padding: 10px 0px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.39);
+    width: 100%;
+}
+
+header > h1 {
+    margin: 0px;
+    text-align: center;
+    padding: 20px;
+    font-size: 3em;
+    font-family: var(--fonte-destaque);
+    text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.39);
+}
+
+header > p {
+    text-align: center;
+    font-size: var(--fonte-padrao);
+}
+
+header > menu {
+    padding: 5px 0px;
+    margin: 0px;
+}
+
+menu > a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 15px;
+}
+
+menu > a:hover {
+    background-color: var(--color03);
+    padding: 15px;
+    color: var(--color02);
+    border-radius: 5px;
+}
+
+
+/* --- Abaixo está agrupado a maior parte dos estilos para o <menu> --- */
+
+main {
+    background-color: white;
+    padding: var(--default-padding);
+    max-width: 800px;
+    min-width: 320px;
+    margin: 0px auto;
+    box-shadow: 3px 0px 16px 4px rgba(0, 0, 0, 0.39);
+    margin-bottom: var(--default-padding);
+    border-radius: 0px 0px var(--default-padding) var(--default-padding);
+}
+
+strong {
+    color: var(--color02);
+}
+
+.link:link { /*Esta pseudo classe "link" se refere ao etado do link, especificamente, eu acho*/
+    color: var(--color02);
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.link:visited {
+    color: var(--color02);
+    text-decoration: none;
+}
+
+.link::after {
+    content:'🔗'
+}
+
+.green-link {
+    background-color: var(--color01);
+    padding: 5px;
+}
+
+/*28/08 (sabado): estou com uma dificuldade de tirar a barra inferior. fiz uma inspeção e o único lugar que demonstra que está "estrapolando" para os lados é o main, o footer e o header, não estão "estrapolando". 30/08 - (segunda): estranho que quando a tela do navegador fica maior (utiliso mais a tela do pc para exibir o navegador) essa barra inferior desaparece. Logo apos algumas horas trabalhando neste projeto a barra inferior voltou a parecer. Não sei o pq pois acredito não ter feito nenhuma alteração relevante no css, pois fiquei focado apenas em deixar o video sem padding.*/
+
+p:not(.excluir) {
+    text-align: justify;
+    text-indent: 2em;
+    font-weight: 500;
+    font-size: var(--p-padrao);
+    line-height: 2em;
+    width: 100%;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+iframe {
+    width: 100%;
+    height: 500px;
+}
+
+section > h1 {
+    margin-top: 0px;
+    font-family: 'fonte padrão';
+    color: var(--color02);
+}
+
+article > h2 {
+    background: linear-gradient(90deg, var(--color01), white);
+    padding-left: 10px;
+    font-family: 'fonte padrão';
+    color: var(--color02);
+}
+
+aside {
+    background-color: var(--color04);
+    border-radius: var(--default-padding);
+}
+
+aside > h3 {
+    font-size: 1.1em;
+    background-color: var(--color05);
+    width:auto;
+    padding: var(--default-padding);
+    color: white;
+    border-radius: var(--aside-border) var(--default-padding) 0px 0px;
+}
+
+aside > div {
+    padding: 0px var(--default-padding) var(--default-padding) var(--default-padding);
+}
+
+ul {
+    list-style: none;
+  }
+  
+  ul li:before {
+    content: '✓';
+  }
+
+/* --- Abaixo está agrupado a maior parte dos estilos para o <footer> --- */
+
+footer {
+    background-color: var(--color02);
+    padding: 15px;
+    width: 100%;
+    margin: 0px;
+}
+
+footer > p {
+    margin: 0;
+    color: white;
+    text-align: center;
+}
+
